@@ -66,12 +66,7 @@ export default async function Home() {
     orderBy: { createdAt: "desc" },
   });
 
-  const stats = [
-    { n: "120+", label: "Proyek Selesai" },
-    { n: "80+", label: "Klien Puas" },
-    { n: "3+", label: "Tahun Berpengalaman" },
-    { n: "4.9★", label: "Rating Rata-rata" },
-  ];
+ 
 
   const features = [
     {
@@ -138,27 +133,6 @@ export default async function Home() {
           >
             Lihat Karya
           </Link>
-        </div>
-
-        {/* stat strip */}
-        <div className="mt-20 flex flex-wrap justify-center gap-px overflow-hidden rounded-2xl border border-black/8 bg-white/65 shadow-sm backdrop-blur-xl">
-          {stats.map((s) => (
-            <div
-              key={s.label}
-              className="flex flex-col items-center px-10 py-6"
-            >
-              <span className="text-3xl font-black text-yellow-500">{s.n}</span>
-              <span className="mt-1 text-xs text-gray-500">{s.label}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* scroll cue */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
-          <span className="text-[10px] uppercase tracking-[0.2em] text-gray-400">
-            Scroll
-          </span>
-          <div className="h-10 w-px bg-gradient-to-b from-gray-400 to-transparent" />
         </div>
       </section>
 
