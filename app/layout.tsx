@@ -18,12 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={cn("scroll-smooth", "font-sans", geist.variable)}>
-      <body className="antialiased font-sans text-gray-800">
+    <html lang="id" className="scroll-smooth" suppressHydrationWarning>
+      <body
+        className={cn(`${geist.variable} font-sans antialiased bg-[#0a0a0a] text-white`)}
+        suppressHydrationWarning
+      >
         <Navbar />
-        <main className="min-h-screen pt-16">
-          {children}
-        </main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>
