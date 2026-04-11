@@ -193,14 +193,6 @@ export function HeroSection() {
     { initials: "ES", bg: "bg-emerald-500" },
   ];
 
-  // ── Stats data ──────────────────────────────────────────────────────────────
-  const stats = [
-    { num: "50+", label: "Klien Happy" },
-    { num: "200+", label: "Konten Dibuat" },
-    { num: "3 Thn", label: "Pengalaman" },
-    { num: "4.9★", label: "Rating" },
-  ];
-
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#fafafa] px-4 pb-16 pt-24">
 
@@ -230,10 +222,9 @@ export function HeroSection() {
 
         {/* Headline utama */}
         <h1 className="max-w-4xl text-[clamp(2.8rem,8vw,7rem)] font-black leading-[0.9] tracking-tight">
-          <span className="block text-gray-900">We Don't</span>
-          <span className="block text-gray-900">Just Design.</span>
-          <span className="block italic text-yellow-400">We Make You</span>
-          <span className="block text-gray-900">Unforgettable.</span>
+          <span className="block text-gray-900">We Make</span>
+          <span className="block italic text-yellow-400">Brands</span>
+          <span className="block text-gray-900">Shine.</span>
         </h1>
 
         {/* Sub copy */}
