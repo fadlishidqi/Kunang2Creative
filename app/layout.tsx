@@ -1,20 +1,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import { Geist, Pixelify_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { SessionProvider } from "next-auth/react";
 
-// Konfigurasi Font Geist
-const geist = Geist({ 
-  subsets: ["latin"], 
-  variable: "--font-sans" 
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-sans",
 });
 
-// Konfigurasi Font Pixelify Sans
-const pixelify = Pixelify_Sans({ 
-  subsets: ["latin"], 
-  variable: "--font-pixelify" 
+const pixelify = Pixelify_Sans({
+  subsets: ["latin"],
+  variable: "--font-pixelify",
 });
 
 export const metadata: Metadata = {
@@ -29,16 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="id" className="scroll-smooth" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body
         className={cn(
           `${geist.variable} ${pixelify.variable} font-sans antialiased bg-[#fafafa] text-gray-900`
         )}
         suppressHydrationWarning
       >
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <SessionProvider>{children}</SessionProvider>
       </body>
     </html>
   );

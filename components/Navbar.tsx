@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence, MotionConfig } from "framer-motion";
 
 const links = [
@@ -9,10 +10,15 @@ const links = [
   { href: "/#about", label: "Tentang", section: "about" },
   { href: "/#services", label: "Layanan", section: "services" },
   { href: "/#portfolio", label: "Portofolio", section: "portfolio" },
+  { href: "/#artikel", label: "Artikel", section: "artikel" },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+  const [scrolled, setScrolled] = useState(() =>
+    typeof window !== "undefined" ? window.scrollY > 40 : false
+  );
   const [open, setOpen] = useState(false);
   const [activeHref, setActiveHref] = useState("/");
   const manualScrolling = useRef(false);
@@ -62,9 +68,13 @@ export default function Navbar() {
   const goHome = (e: React.MouseEvent) => {
     e.preventDefault();
     setActiveHref("/");
-    manualScrolling.current = true;
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    setTimeout(() => { manualScrolling.current = false; }, 1000);
+    if (pathname !== "/") {
+      router.push("/");
+    } else {
+      manualScrolling.current = true;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setTimeout(() => { manualScrolling.current = false; }, 1000);
+    }
   };
 
   // Lock body scroll when mobile menu open
@@ -79,6 +89,7 @@ export default function Navbar() {
         {/* ── NAVBAR BAR ─────────────────────────────────── */}
         <motion.nav
           className="fixed z-50"
+          initial="flat"
           animate={scrolled ? "pill" : "flat"}
           variants={{
             flat: {

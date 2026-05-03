@@ -6,7 +6,7 @@ export default function DesignServicePage() {
       <Link href="/#services" className="text-emerald-600 mb-8 inline-block">&larr; Kembali</Link>
       <h1 className="text-4xl font-bold mb-6">Jasa Desain Poster & Visual</h1>
       <p className="text-gray-600 text-lg mb-8">
-        Kami menyediakan jasa desain profesional untuk kebutuhan promosi, event, media sosial, dan identitas brand. 
+        Kami menyediakan jasa desain profesional untuk kebutuhan promosi, event, media sosial, dan identitas brand.
         Setiap karya dibuat dengan riset target audiens agar visual tidak hanya indah, tapi juga berdampak.
       </p>
       <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">

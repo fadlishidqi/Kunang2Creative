@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-Process -Name \"node\" -ErrorAction SilentlyContinue)",
+      "PowerShell(cmd /c 'rd /s /q \"c:\\\\Undip\\\\ABCDE\\\\kunang2-creative\\\\app\\\\\\(website\\)\\\\portfolio\\\\[id]\"'; if \\($LASTEXITCODE -eq 0\\) { \"Deleted\" } else { \"Failed: $LASTEXITCODE\" })",
+      "Read(//c/Undip/ABCDE/kunang2-creative/app/\\(website\\)/portfolio/**)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Undip\\\\ABCDE\\\\kunang2-creative\" -Directory)",
+      "Bash(Select-Object Name)",
+      "Bash(mkdir -p \"c:\\\\Undip\\\\ABCDE\\\\kunang2-creative\\\\app\\\\\\(dashboard\\)\\\\dashboard\\\\admin\\\\services\\\\[id]\\\\items\\\\new\")",
+      "Bash(mkdir -p \"c:\\\\Undip\\\\ABCDE\\\\kunang2-creative\\\\app\\\\\\(dashboard\\)\\\\dashboard\\\\admin\\\\services\\\\[id]\\\\items\\\\[itemId]\\\\edit\")",
+      "Bash(Get-ChildItem -Path . -Recurse -Filter \"ServicesSection.tsx\" -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(xargs grep *)",
+      "Bash(New-Item -ItemType Directory -Force -Path \"c:\\\\Undip\\\\ABCDE\\\\kunang2-creative\\\\app\\\\\\(website\\)\\\\order\\\\[itemId]\")",
+      "Bash(Out-Null)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Undip\\\\ABCDE\\\\kunang2-creative\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "Bash(type .env.example)",
+      "Bash(type .env.local)",
+      "Bash(findstr /i \"google auth\" .env)",
+      "Bash(findstr /i \"AUTH_\" .env)",
+      "Bash(Get-Content .env -ErrorAction SilentlyContinue)",
+      "Bash(Select-String \"AUTH\")",
+      "PowerShell(Set-Location \"c:\\\\Undip\\\\ABCDE\\\\kunang2-creative\"; npx tsc --noEmit 2>&1 | Where-Object { $_ -notmatch \"\\\\.next\" })",
+      "PowerShell(Set-Location \"c:\\\\Undip\\\\ABCDE\\\\kunang2-creative\"; npx tsc --noEmit 2>&1 | Where-Object { $_ -notmatch \"\\\\.next\" } | Select-Object -First 30)",
+      "PowerShell(Set-Location \"c:\\\\Undip\\\\ABCDE\\\\kunang2-creative\"; $r = npx tsc --noEmit 2>&1; $r -join \"`n\" | Out-File \"$env:TEMP\\\\tsc_out.txt\"; Get-Content \"$env:TEMP\\\\tsc_out.txt\" | Where-Object { $_ -match \"error TS\" -and $_ -notmatch \"\\\\.next\" })",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/artikel)",
+      "Bash(taskkill /PID 22812 /F)",
+      "PowerShell(taskkill /PID 22812 /F)",
+      "Read(//uploads/**)",
+      "Bash(Find \"c:\\\\Undip\\\\ABCDE\\\\kunang2-creative\" -type f -name \"*.tsx\" -path \"*dashboard*\")",
+      "Bash(del \"c:\\\\Undip\\\\ABCDE\\\\kunang2-creative\\\\components\\\\dashboard\\\\ContentBlockEditor.tsx\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Undip\\ABCDE\\kunang2-creative\\app\\(website)\\portfolio\\[id]",
+      "c:\\Undip\\ABCDE\\kunang2-creative\\app\\(dashboard)\\dashboard\\admin\\services\\[id]",
+      "c:\\Undip\\ABCDE\\kunang2-creative\\app\\(website)\\services",
+      "c:\\Undip\\ABCDE\\kunang2-creative\\app\\(website)\\order"
+    ]
+  }
+}
